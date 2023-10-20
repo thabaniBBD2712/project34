@@ -21,10 +21,13 @@ function Login() {
 
   const onSubmit = async (values: any) => {
     try {
-      const response = await axios.post("https://project34api.azurewebsites.net/api/login", {
-        email: values.email,
-        password: values.password,
-      });
+      const response = await axios.post(
+        "https://project34api.azurewebsites.net/api/login",
+        {
+          email: values.email,
+          password: values.password,
+        }
+      );
       setIsLoggedIn(true);
       setTimeout(function () {
         if (response.data?.user?.UserType === "Customer") {
@@ -35,6 +38,8 @@ function Login() {
           );
         } else if (response.data?.user?.UserType === "Admin") {
           window.location.href = "/dashboard";
+        } else if (response.data?.user?.UserType === "Manager") {
+          window.location.href = "/manager";
         }
       }, 1000);
     } catch (error) {
