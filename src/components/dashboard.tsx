@@ -28,16 +28,16 @@ export default function Dashboard(): JSX.Element {
               </svg>
             </div>
             <div className="pt-1 text-right">
-              <p className="text-sm font-light capitalize">Pageviews</p>
+              <p className="text-sm font-light capitalize">Active Users</p>
               <h4 className="text-2xl font-semibold tracking-tighter xl:text-2xl">
-                14,000
+               94%
               </h4>
             </div>
           </div>
           <hr className="opacity-50" />
           <div className="p-4">
             <p className="font-light">
-              <span className="text-sm font-bold text-green-600">+22% </span>vs
+              <span className="text-sm font-bold text-green-600">+Na% </span>vs
               last month
             </p>
           </div>
