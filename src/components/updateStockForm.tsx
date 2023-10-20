@@ -20,10 +20,10 @@ interface StockQuantity {
 
 const UpdateStock: React.FC<StockQuantity> = ({ stockQuantiy }) => {
   const onSubmit = async (values: Product) => {
-   
+  
     
     try {
-      await axios.put(`http://localhost:3001/api/stock/${stockQuantiy}`, values.Name);
+      await axios.put(`https://project34api.azurewebsites.net/api/stock/${stockQuantiy}`, values.Name);
       console.log("Data updated successfully:", values);
       setTimeout(function () {
        console.log('updated')
@@ -72,6 +72,7 @@ const UpdateStock: React.FC<StockQuantity> = ({ stockQuantiy }) => {
             <button
               type="submit"
               className="inline-block rounded bg-red-600 px-6 pb-2 pt-2.5 text-xs font-medium uppercase text-white "
+              
             >
               {stockQuantiy === 0 ? "ADD NEW STOCK" : "UPDATE STOCK"}
             </button>

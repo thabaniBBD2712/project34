@@ -104,7 +104,7 @@ export default function StockManager(): JSX.Element {
                   <p className="mb-4 text-base ">
                     Current Stock : {item.StockQuantity}
                   </p>
-                  <UpdateStock stockQuantiy={item.StockQuantity} />
+                  <UpdateStock stockQuantiy={item.ItemID} />
                 </div>
               </div>
             </div>

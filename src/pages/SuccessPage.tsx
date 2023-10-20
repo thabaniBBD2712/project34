@@ -1,6 +1,7 @@
 import React from "react";
 function back() {
   window.location.href = "/order";
+  localStorage.removeItem("cart");
 }
 function Order() {
   return (

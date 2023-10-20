@@ -37,7 +37,7 @@ export default function Dashboard(): JSX.Element {
           <hr className="opacity-50" />
           <div className="p-4">
             <p className="font-light">
-              <span className="text-sm font-bold text-green-600">+Na% </span>vs
+              <span className="text-sm font-bold text-green-600">+NaH% </span>vs
               last month
             </p>
           </div>
