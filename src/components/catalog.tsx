@@ -24,9 +24,8 @@ interface TableData {
 }
 
 const Catalog: React.FC<Step2Props> = ({ values }) => {
-  const [isNextButtonDisabled, setIsNextButtonDisabled] = useAtom(
-    isNextButttonEnabled
-  );
+  const [isNextButtonDisabled, setIsNextButtonDisabled] =
+    useAtom(isNextButttonEnabled);
   const [data, setData] = useState<TableData[]>([]);
   const [catalog, setCatalog] = useAtom(addCatalog);
   const [burger, setBurger] = useAtom(burgerType);
@@ -115,7 +114,13 @@ const Catalog: React.FC<Step2Props> = ({ values }) => {
                     strokeLinejoin="round"
                   >
                     <circle cx="11" cy="11" r="8" className=""></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65" className=""></line>
+                    <line
+                      x1="21"
+                      y1="21"
+                      x2="16.65"
+                      y2="16.65"
+                      className=""
+                    ></line>
                   </svg>
                   <input
                     type="name"
@@ -130,7 +135,7 @@ const Catalog: React.FC<Step2Props> = ({ values }) => {
               <div className="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-12 w-full mt-6"></div>
               <div className=" grid grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-4 mt-8 mb-16">
                 {filteredData.map((item: TableData, index: number) => {
-                  if (item.Category === burgerName||item.Category==='All') {
+                  if (item.Category === burgerName || item.Category === "All") {
                     return (
                       <article
                         className="relative flex flex-col overflow-hidden mb-10 rounded-lg border"
@@ -153,9 +158,6 @@ const Catalog: React.FC<Step2Props> = ({ values }) => {
                             <p className="mr-3 text-sm font-semibold">
                               R{item.Price}
                             </p>
-                            <del className="text-xs text-gray-400">
-                              R{item.Price + item.Price * 0.3}
-                            </del>
                           </div>
                           <h3 className="mb-2 text-sm text-gray-400">
                             {item.ItemName}

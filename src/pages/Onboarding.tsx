@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { FormikValues } from "formik";
 import * as Yup from "yup";
-import Step1, { MyContext } from "../components/step1";
+import Step1, {  } from "../components/step1";
 
 import Step2 from "../components/step2";
 import Step3 from "../components/step3";
@@ -49,7 +49,7 @@ const BurgerOnboarding: React.FC = () => {
         <Step label="Build Burger" />
         <Step label="Verify Your Burger" />
       </Stepper>
-      {step === 0 && <Step1 values={""} />}
+      {step === 0 && <Step1/>}
       {step === 1 && <Catalog values={""} />}
       {step === 2 && <Step2 values={""} />}
 
