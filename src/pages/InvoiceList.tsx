@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/navbar";
 import FullPageLoader from "../components/fullpageloader/fullpageloader";
 import dayjs from "dayjs";
-import CancelOrder from "../components/cancelOrder";
 
-const Orders: React.FC = () => {
+
+const Invoice: React.FC = () => {
   const [cartItems, setCartItems] = useState<Array<{}>>([]);
 
   const isNullOrEmpty = (value: String) => {
@@ -48,13 +48,12 @@ const Orders: React.FC = () => {
   return (
     <>
       <Navbar />
-
       {cartItems.length > 0 ? (
         <div className="w-screen">
           <div className="mx-auto mt-8 max-w-screen-lg px-2">
             <div className="sm:flex sm:items-center sm:justify-between flex-col sm:flex-row">
               <p className="flex-1 text-base font-bold text-gray-900">
-                Latest Orders
+                Latest Invoice
               </p>
 
               <div className="mt-4 sm:mt-0">
@@ -82,22 +81,15 @@ const Orders: React.FC = () => {
                 <thead className="hidden border-b lg:table-header-group">
                   <tr className="">
                     <td className="whitespace-normal py-4 text-sm font-medium text-gray-500 sm:px-6">
-                      Order No
+                      Invoice No
                     </td>
 
                     <td className="whitespace-normal py-4 text-sm font-medium text-gray-500 sm:px-6">
-                      Date Details
+                      Date 
                     </td>
 
                     <td className="whitespace-normal py-4 text-sm font-medium text-gray-500 sm:px-6">
-                      Order Status
-                    </td>
-
-                    <td className="whitespace-normal py-4 text-sm font-medium text-gray-500 sm:px-6">
-                      Order Details
-                    </td>
-                    <td className="whitespace-normal py-4 text-sm font-medium text-gray-500 sm:px-6">
-                      Cancel Order
+                      Invoice Details
                     </td>
                   </tr>
                 </thead>
@@ -115,38 +107,13 @@ const Orders: React.FC = () => {
                       <td className="whitespace-no-wrap hidden py-4 text-sm font-normal text-gray-500 sm:px-6 lg:table-cell">
                         {getFormattedDate(item.orderDate)}
                       </td>
-                      <td className="whitespace-no-wrap hidden py-4 text-sm font-normal text-gray-500 sm:px-6 lg:table-cell">
-                        {item.orderStatus === 0 ? (
-                          <div className="inline-flex items-center rounded-full bg-blue-400 py-1 px-2 text-white">
-                            Pending
-                          </div>
-                        ) : item.orderStatus === 1 ? (
-                          <div className="inline-flex items-center rounded-full bg-green-400 py-2 px-3 text-xs text-white">
-                            Complete
-                          </div>
-                        ) : item.orderStatus === 2 ? (
-                          <div className="inline-flex items-center rounded-full bg-red-400 py-2 px-3 text-xs text-white">
-                            Cancelled
-                          </div>
-                        ) : null}
-                      </td>
                       <td className="whitespace-no-wrap py-4 px-6 text-right text-sm text-gray-600 lg:text-left">
                         <Link
                           className="px-4 py-2 text-white rounded ml-auto bg-blue-600"
-                          to={`/order-details/${item.orderID}`}
+                          to={`/invoice-details/${item.orderID}`}
                         >
                           View Order
                         </Link>
-                      </td>
-                      <td className="whitespace-no-wrap py-4 px-6 text-right text-sm text-gray-600 lg:text-left">
-                        {item.orderStatus === 2||item.orderStatus===1 ? (
-                          <button className="px-4 py-2 text-white rounded ml-auto bg-red-300 cursor-not-allowed"
-                          disabled={true}>
-                            Cancel Order
-                          </button>
-                        ) : (
-                          <CancelOrder id={item.orderID} />
-                        )}
                       </td>
                     </tr>
                   ))}
@@ -162,4 +129,4 @@ const Orders: React.FC = () => {
   );
 };
 
-export default Orders;
+export default Invoice;

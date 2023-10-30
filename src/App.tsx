@@ -7,6 +7,9 @@ import Orders from "./pages/Orders";
 import Order from "./pages/SuccessPage";
 import Stock from "./pages/Manager";
 import OrdersDetails from "./pages/OrderDetails";
+import Invoice from "./pages/InvoiceList"
+import InvoiceDetails from "./pages/InvoiceDetials";
+
 export interface IApplicationProps {}
 
 const Application: React.FunctionComponent<IApplicationProps> = (props) => {
@@ -21,6 +24,9 @@ const Application: React.FunctionComponent<IApplicationProps> = (props) => {
         <Route path="stock" element={<BurgerOnboarding />} />
         <Route path="success" element={<Order />} />
         <Route path="order-details/:id" element={<OrdersDetails />} />
+        <Route path="invoice-details/:id" element={<InvoiceDetails />} />
+        <Route path="invoice" element={<Invoice />} />
+        
       </Routes>
     </BrowserRouter>
   );

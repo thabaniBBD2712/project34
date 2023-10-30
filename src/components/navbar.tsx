@@ -16,6 +16,14 @@ export default function Navbar({ fixed }: any) {
     window.location.href = "/order";
   }
 
+  function invoices() {
+    setBold2(true);
+    setBold(false);
+    window.location.href = "/invoice";
+  }
+
+  
+
   function Logout(){
     window.location.href = "/";
   }
@@ -53,6 +61,13 @@ export default function Navbar({ fixed }: any) {
                 }
               >
                 <button onClick={orders}>Order</button>
+              </li>
+              <li
+                className={
+                  bold2 ? "font-bold sm:mr-12" : "text-gray-800 sm:mr-12"
+                }
+              >
+                <button onClick={invoices}>Invoices</button>
               </li>
             </ul>
             <ul className="mt-4 flex sm:mt-0">
