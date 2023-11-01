@@ -112,7 +112,7 @@ const Invoice: React.FC = () => {
                           className="px-4 py-2 text-white rounded ml-auto bg-blue-600"
                           to={`/invoice-details/${item.orderID}`}
                         >
-                          View Order
+                          View Invoice
                         </Link>
                       </td>
                     </tr>

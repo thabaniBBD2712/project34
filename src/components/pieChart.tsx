@@ -87,7 +87,7 @@ const BestSellingBurger: React.FC = () => {
         onChange={handleTimeFrameChange}
       >
         <option value="week">Week</option>
-        <option value="month">Month</option>
+        {/* <option value="month">Month</option> */}
         <option value="year">Year</option>
       </select>
       <div className="pl-[20rem] h-[25rem]">

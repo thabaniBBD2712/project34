@@ -26,7 +26,7 @@ export function BarChart() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://project34api.azurewebsites.net/api/stock-level");
+        const response = await fetch("https://project34api.azurewebsites.net/api/burgers");
         const jsonData = await response.json();
         setSelectedTimeFrame(jsonData);
       } catch (error) {
@@ -39,7 +39,7 @@ export function BarChart() {
 
   const labels: any = selectedTimeFrame.map((item: any) => item.ItemName);
   const dataSet: any = selectedTimeFrame.map(
-    (item: any) => item.StockLevelPercentage
+    (item: any) => item.StockQuantity
   );
   const options = {
     responsive: true,
